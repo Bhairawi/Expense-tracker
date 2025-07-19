@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="auth-section">
+    <h2>Login / Sign Up</h2>
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <button onclick="login()">Login</button>
+    <button onclick="signup()">Sign Up</button>
+    <p id="auth-message"></p>
+  </div>
+
+  <div id="main-section" style="display: none;">
+    <h2>Welcome, <span id="currentUser"></span>!</h2>
+    <button onclick="logout()">Logout</button>
+
+    <h3>Add Expense</h3>
+    <input type="text" id="category" placeholder="Category" />
+    <input type="number" id="amount" placeholder="Amount" />
+    <input type="text" id="comments" placeholder="Comments (optional)" />
+    <button onclick="addExpense()">Add</button>
+
+    <h3>Expense List</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Amount</th>
+          <th>Created At</th>
+          <th>Updated At</th>
+          <th>Comments</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="expenseTable"></tbody>
+    </table>
+
+    <h3>Category-wise Expense Pie Chart</h3>
+    <canvas id="expenseChart" width="400" height="200"></canvas>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
